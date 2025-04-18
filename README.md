@@ -1,5 +1,7 @@
 # Rosebud, 200 Gbps middlebox framework for FPGAs
 
+Forked from https://github.com/ucsdsysnet/Rosebud
+
 Rosebud is a new approach to designing FPGA-accelerated middleboxes that simplifies development, debugging, and performance tuning by decoupling the tasks of hardware-accelerator implementation and software-application programming. Rosebud is a framework that links hardware accelerators to a high-performance packet processing pipeline through a standardized hardware/software interface. This separation of concerns allows hardware developers to focus on optimizing custom accelerators while freeing software programmers to reuse, configure, and debug accelerators in a fashion akin to software libraries. We show the benefits of the Rosebud framework can be seen through two examples: a firewall based on a large blacklist, and porting the Pigasus IDS pattern-matching accelerator, together in less than a month. Our experiments demonstrate that Rosebud delivers high performance, serving 200 Gbps of traffic while adding only 0.7-7 microseconds of latency.
 
 More information can be found in our paper: https://arxiv.org/abs/2201.08978
