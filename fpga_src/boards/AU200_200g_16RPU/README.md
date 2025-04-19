@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This design targets the Xilinx VCU1525 FPGA board.
+This design targets the Xilinx Alveo U200 board.
 
 * FPGA: xcu200-fsgd2104-2-e
 * MAC: Xilinx 100G CMAC
