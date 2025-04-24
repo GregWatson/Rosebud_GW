@@ -58,7 +58,7 @@ static int mqnic_start_port(struct net_device *ndev)
         priv->rx_cpl_ring[k]->ring_index = k;
         priv->rx_cpl_ring[k]->handler = mqnic_rx_irq;
 
-        netif_napi_add(ndev, &priv->rx_cpl_ring[k]->napi, mqnic_poll_rx_cq, NAPI_POLL_WEIGHT);
+        netif_napi_add(ndev, &priv->rx_cpl_ring[k]->napi, mqnic_poll_rx_cq/*, NAPI_POLL_WEIGHT*/);
         napi_enable(&priv->rx_cpl_ring[k]->napi);
 
         mqnic_arm_cq(priv->rx_cpl_ring[k]);
@@ -82,7 +82,8 @@ static int mqnic_start_port(struct net_device *ndev)
         priv->tx_cpl_ring[k]->ring_index = k;
         priv->tx_cpl_ring[k]->handler = mqnic_tx_irq;
 
-        netif_tx_napi_add(ndev, &priv->tx_cpl_ring[k]->napi, mqnic_poll_tx_cq, NAPI_POLL_WEIGHT);
+        // netif_tx_napi_add(ndev, &priv->tx_cpl_ring[k]->napi, mqnic_poll_tx_cq, NAPI_POLL_WEIGHT);
+        netif_napi_add_tx(ndev, &priv->tx_cpl_ring[k]->napi, mqnic_poll_tx_cq);
         napi_enable(&priv->tx_cpl_ring[k]->napi);
         
         mqnic_arm_cq(priv->tx_cpl_ring[k]);
