@@ -1,0 +1,7 @@
+*.log
+*.jou
+*.ltx
+*.pyc
+*.csv
+fpga*
+hd_visual
