@@ -121,8 +121,6 @@ int main(int argc, char *argv[])
         printf("interface %d rx drops: %u\n",  k, interface_stat_rd(dev, k, 0, 2));
     }
 
-err:
-
     mqnic_close(dev);
 
     return ret;

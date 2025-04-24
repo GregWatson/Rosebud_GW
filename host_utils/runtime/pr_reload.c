@@ -196,7 +196,7 @@ int main(int argc, char *argv[])
         char *r_segment = calloc(segment_size, 1);
         size_t ins_len;
         size_t map_len = 0;
-        size_t data_len = 0;
+        // size_t data_len = 0;
 
         // read instruction binary file
         printf("Reading binary file \"%s\"...\n", instr_bin);

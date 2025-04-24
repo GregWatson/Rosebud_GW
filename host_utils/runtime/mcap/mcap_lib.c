@@ -37,6 +37,7 @@
 ******************************************************************************/
 
 #include "mcap_lib.h"
+#include <unistd.h>
 
 #define MCAP_LOOP_COUNT	1000000
 
@@ -202,7 +203,7 @@ static int MCapClearRequestByConfigure(struct mcap_dev *mdev, u32 *restore)
 static int Checkforcompletion(struct mcap_dev *mdev)
 {
 	unsigned long retry_count = 0;
-	u32 delay;
+	// u32 delay;
 	int sr, i;
 
 	sr = MCapRegRead(mdev, MCAP_STATUS);
